@@ -78,26 +78,26 @@
 # rdsamp -r nsrdb/19140 -c -H -f 0 -t 10 -v -pd >samples/MIT-BIH-NORM/MIT_17.csv
 # rdsamp -r nsrdb/19830 -c -H -f 0 -t 10 -v -pd >samples/MIT-BIH-NORM/MIT_18.csv
 
-rdsamp -r sddb/30 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_1.csv
-rdsamp -r sddb/31 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_2.csv
-rdsamp -r sddb/32 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_3.csv
-rdsamp -r sddb/33 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_4.csv
-rdsamp -r sddb/34 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_5.csv
-rdsamp -r sddb/35 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_6.csv
-rdsamp -r sddb/36 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_7.csv
-rdsamp -r sddb/37 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_8.csv
-rdsamp -r sddb/38 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_9.csv
-rdsamp -r sddb/39 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_10.csv
-rdsamp -r sddb/40 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_11.csv
-rdsamp -r sddb/41 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_12.csv
-rdsamp -r sddb/42 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_13.csv
-rdsamp -r sddb/43 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_14.csv
-rdsamp -r sddb/44 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_15.csv
-rdsamp -r sddb/45 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_16.csv
-rdsamp -r sddb/46 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_17.csv
-rdsamp -r sddb/47 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_18.csv
-rdsamp -r sddb/48 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_19.csv
-rdsamp -r sddb/49 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_20.csv
-rdsamp -r sddb/50 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_21.csv
-rdsamp -r sddb/51 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_22.csv
-rdsamp -r sddb/52 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_23.csv
+# rdsamp -r sddb/30 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_1.csv
+# rdsamp -r sddb/31 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_2.csv
+# rdsamp -r sddb/32 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_3.csv
+# rdsamp -r sddb/33 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_4.csv
+# rdsamp -r sddb/34 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_5.csv
+# rdsamp -r sddb/35 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_6.csv
+# rdsamp -r sddb/36 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_7.csv
+# rdsamp -r sddb/37 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_8.csv
+# rdsamp -r sddb/38 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_9.csv
+# rdsamp -r sddb/39 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_10.csv
+# rdsamp -r sddb/40 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_11.csv
+# rdsamp -r sddb/41 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_12.csv
+# rdsamp -r sddb/42 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_13.csv
+# rdsamp -r sddb/43 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_14.csv
+# rdsamp -r sddb/44 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_15.csv
+# rdsamp -r sddb/45 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_16.csv
+# rdsamp -r sddb/46 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_17.csv
+# rdsamp -r sddb/47 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_18.csv
+# rdsamp -r sddb/48 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_19.csv
+# rdsamp -r sddb/49 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_20.csv
+# rdsamp -r sddb/50 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_21.csv
+# rdsamp -r sddb/51 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_22.csv
+# rdsamp -r sddb/52 -c -H -f 0 -t 60 -v -pd >samples/SDDB/SCD_23.csv
