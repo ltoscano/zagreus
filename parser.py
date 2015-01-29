@@ -30,7 +30,7 @@ def parse():
     # print(record.filename)
     # print(record.features)
 
-def report(test_split_size):
+def split_sets(test_split_size):
   featuresets = list()
   for record in records:
     featuresets.append((record.features, record.my_class))
@@ -39,18 +39,25 @@ def report(test_split_size):
   train_set = featuresets[split:]
   test_set = featuresets[:split]
   print("split:", test_split_size, "train:", len(train_set), "test:", split)
+  return (train_set, test_set)
 
-  # classifier = nltk.NaiveBayesClassifier.train(train_set)
-  # print("naive bayes accuracy: " +
-  #       str(nltk.classify.accuracy(classifier, test_set)))
+def report(test_split_size):
+  sets_split = split_sets(test_split_size)
+  train_set = sets_split[0]
+  test_set = sets_split[1]
 
-  # classifier = nltk.DecisionTreeClassifier.train(train_set)
-  # print("tree accuracy: " + str(nltk.classify.accuracy(classifier, test_set)))
+  classifier = nltk.NaiveBayesClassifier.train(train_set)
+  print("naive bayes accuracy: " +
+        str(nltk.classify.accuracy(classifier, test_set)))
+
+  classifier = nltk.DecisionTreeClassifier.train(train_set)
+  print("tree accuracy: " + str(nltk.classify.accuracy(classifier, test_set)))
 
   svm_train_features = list()
   svm_train_classes = list()
   svm_test_features = list()
   svm_test_classes = list()
+
   for item in train_set:
     svm_train_features.append(list(item[0].values()))
     svm_train_classes.append(item[1])
@@ -63,9 +70,37 @@ def report(test_split_size):
   print("svm accuracy: " +
         str(classifier.score(svm_test_features, svm_test_classes)))
 
+def display_avgs():
+  scd_list = dict()
+  norm_list = dict()
+  scd_count = 0
+  norm_count = 0
+
+  for key in records[0].features:
+    scd_list[key] = 0
+    norm_list[key] = 0
+
+  for record in records:
+    if (record.my_class == "SCD"):
+      for key in record.features:
+        scd_list[key] += record.features[key]
+        scd_count += 1
+    else:
+      for key in record.features:
+        norm_list[key] += record.features[key]
+        norm_count += 1
+
+  for key in scd_list:
+    scd_list[key] /= scd_count
+    norm_list[key] /= norm_count
+
+  print(scd_list)
+  print(norm_list)
+
 parse()
-report(4)
-report(4)
-report(4)
-report(4)
-report(4)
+display_avgs()
+report(3)
+report(3)
+report(3)
+report(3)
+report(3)

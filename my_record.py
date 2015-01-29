@@ -28,18 +28,19 @@ class MyRecord:
       self.my_class = "SCD"
 
   def process(self, file_p):
-    for line in file_p.readlines():
+    lines = file_p.readlines()[1:]
+    for line in lines:
       words = line.split()
       curr_time = words[0].split(":")
       if (len(curr_time) == 2):
         curr_time = timedelta(seconds=float(curr_time[0]),
-                              microseconds=float(curr_time[1]))
+                              milliseconds=float(curr_time[1]))
       else:
         curr_time = timedelta(minutes=float(curr_time[0]),
                               seconds=float(curr_time[1]),
-                              microseconds=float(curr_time[2]))
+                              milliseconds=float(curr_time[2]))
       if (self.onset):
-        if (self.onset < curr_time):
+        if (self.onset > curr_time):
           self.intervals.append((curr_time, float(words[2])))
       else:
         self.intervals.append((curr_time, float(words[2])))
@@ -57,6 +58,26 @@ class MyRecord:
       median = sorted_list[index][1]
     self.features['median'] = median
 
+  def generate_rmsdd(self):
+    last_time = 0
+    rmsdd_sum = 0
+    sdsd_sum = 0
+    nn_50 = 0
+
+    for (time, item) in self.intervals:
+      diff = last_time - item
+      rmsdd_sum += pow(diff, 2)
+      sdsd_sum += math.sqrt(pow(diff, 2))
+      if (math.sqrt(pow(diff, 2)) > 0.05):
+        nn_50 += 1
+
+    rmsdd_sum /= len(self.intervals)
+    sdsd_sum /= len(self.intervals)
+    self.features['rmsdd'] = math.sqrt(rmsdd_sum)
+    self.features['sdsd'] = sdsd_sum
+    self.features['nn_50'] = nn_50
+    self.features['p_nn_50'] = nn_50 / len(self.intervals)
+
   def generate_features(self):
     my_sum = 0
     my_index = 0
@@ -72,6 +93,9 @@ class MyRecord:
       if (item < my_min):
         my_min = item
 
+    if (my_index == 0):
+      print(self.intervals, self.id, self.onset)
+
     mean = float(my_sum / my_index)
 
     for (time, item) in self.intervals:
@@ -83,3 +107,4 @@ class MyRecord:
     self.features['max'] = my_max
     self.features['std_dev'] = std_dev
     self.generate_median()
+    self.generate_rmsdd()
