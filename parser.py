@@ -7,6 +7,7 @@ from random import shuffle
 from sklearn import svm
 import numpy
 from my_record import MyRecord
+import pickle
 
 rootdir = '/Users/luke/Documents/ekg_analysis/zagreus/samples/'
 repositories = ['SDDB_RR', 'NORM_RR', 'VF_RR', 'VT_RR']
@@ -19,16 +20,17 @@ def parse():
         filename = os.path.join(subdir, my_file)
         record = MyRecord(repo, my_file)
         record.filename = my_file
-        records.append(record)
         file_p = open(filename, 'r')
         record.process(file_p)
         file_p.close()
+        records.append(record)
 
-  # for record in records:
-  #   print(record.intervals)
-    # print(record.my_class)
-    # print(record.filename)
-    # print(record.features)
+  pickle.dump(records, open("records.pickle", "wb"))
+
+def load():
+  my_records = pickle.load(open("records.pickle", "rb"))
+  for record in my_records:
+    records.append(record)
 
 def split_sets(test_split_size):
   featuresets = list()
@@ -46,12 +48,12 @@ def report(test_split_size):
   train_set = sets_split[0]
   test_set = sets_split[1]
 
-  classifier = nltk.NaiveBayesClassifier.train(train_set)
-  print("naive bayes accuracy: " +
-        str(nltk.classify.accuracy(classifier, test_set)))
+  # classifier = nltk.NaiveBayesClassifier.train(train_set)
+  # print("naive bayes accuracy: " +
+  #       str(nltk.classify.accuracy(classifier, test_set)))
 
-  classifier = nltk.DecisionTreeClassifier.train(train_set)
-  print("tree accuracy: " + str(nltk.classify.accuracy(classifier, test_set)))
+  # classifier = nltk.DecisionTreeClassifier.train(train_set)
+  # print("tree accuracy: " + str(nltk.classify.accuracy(classifier, test_set)))
 
   svm_train_features = list()
   svm_train_classes = list()
@@ -65,9 +67,18 @@ def report(test_split_size):
     svm_test_features.append(list(item[0].values()))
     svm_test_classes.append(item[1])
 
-  classifier = svm.SVC()
+
+# sequential minimal optimization (SMO,QP and LS) and soft-margin (0.1 - 2.0).
+# PNN  = only the spread value adjustment (0.1 - 3.0)
+
+  # classifier = svm.LinearSVC()
+  # classifier.fit(svm_train_features, svm_train_classes)
+  # print("LinearSVC accuracy: " +
+  #       str(classifier.score(svm_test_features, svm_test_classes)))
+
+  classifier = svm.SVC(kernel="linear", C=0.1)
   classifier.fit(svm_train_features, svm_train_classes)
-  print("svm accuracy: " +
+  print("linear kernel svm accuracy: " +
         str(classifier.score(svm_test_features, svm_test_classes)))
 
 def display_avgs():
@@ -97,8 +108,9 @@ def display_avgs():
   print(scd_list)
   print(norm_list)
 
-parse()
-display_avgs()
+# parse()
+load()
+# display_avgs()
 report(3)
 report(3)
 report(3)
