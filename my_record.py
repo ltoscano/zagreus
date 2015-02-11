@@ -9,6 +9,9 @@ import numpy
 from datetime import timedelta
 from constants import onsets, spontaneous_vt_onsets, spontaneous_vf_onsets
 
+# time in seconds of how big an accepted interval must be
+interval_base = 120
+
 class MyRecord:
 
   def __init__(self, my_class, my_file):
@@ -16,7 +19,7 @@ class MyRecord:
     self.features = dict()
     self.my_class = my_class
     self.id = my_file.split("_")[1].split(".")[0]
-    self.onset = None
+    self.onset = timedelta(seconds=interval_base)
     if (self.my_class == "SDDB_RR"):
       self.onset = onsets[self.id]
       self.my_class = "SCD"
@@ -40,11 +43,13 @@ class MyRecord:
                               seconds=float(curr_time[1]),
                               milliseconds=float(curr_time[2]))
       if (self.onset):
-        if (self.onset > curr_time):
+        one_minute_interval = self.onset - timedelta(seconds=interval_base)
+        if (self.onset > curr_time and curr_time > one_minute_interval):
           self.intervals.append((curr_time, float(words[2])))
       else:
         self.intervals.append((curr_time, float(words[2])))
-    self.generate_features()
+    if (len(self.intervals) > interval_base - 10):
+      self.generate_features()
 
   def generate_median(self):
     sorted_list = sorted(self.intervals)

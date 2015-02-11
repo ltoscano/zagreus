@@ -6,9 +6,10 @@ import math
 from random import shuffle
 from sklearn import svm
 import numpy
-from my_record import MyRecord
+from my_record import MyRecord, interval_base
 import pickle
 from datetime import datetime, timedelta
+from sklearn.ensemble import AdaBoostClassifier
 
 rootdir = '/Users/luke/Documents/ekg_analysis/zagreus/samples/'
 anno_dir = '/Users/luke/Documents/ekg_analysis/zagreus/samples/MIMIC_HR_ANN'
@@ -49,7 +50,12 @@ class MimicRecord(MyRecord):
       date = line[1][:-1].split("/")
       timestamp = self.transform_timestamp(time, date)
       bpm = line[2]
-      if (timestamp < self.onset and bpm != "-" and bpm != "0.000"):
+      minute_interval = self.onset - timedelta(seconds=interval_base)
+      if (timestamp < self.onset and
+          timestamp > minute_interval and
+          bpm != "-" and
+          bpm != "0.000"
+          ):
         interval = SECONDS_PER_MIN / float(bpm)
         curr_time = timedelta(hours=float(time[0]),
                               minutes=float(time[1]),
@@ -111,6 +117,33 @@ def report():
   print("linear kernel svm accuracy: " +
         str(classifier.score(svm_test_features, svm_test_classes)))
 
+def boost_report():
+  svm_train_features = list()
+  svm_train_classes = list()
+  svm_test_features = list()
+  svm_test_classes = list()
+
+  for record in mit_records:
+    svm_train_features.append(list(record.features.values()))
+    svm_train_classes.append(record.my_class)
+  for record in mim_records:
+    svm_test_features.append(list(record.features.values()))
+    svm_test_classes.append(record.my_class)
+
+  svm_classifier = svm.SVC(kernel="linear", C=0.1)
+  svm_classifier.fit(svm_train_features, svm_train_classes)
+  print("linear kernel svm accuracy: " +
+        str(svm_classifier.score(svm_test_features, svm_test_classes)))
+
+  classifier = AdaBoostClassifier(
+    base_estimator=svm_classifier,
+    n_estimators=100,
+    algorithm='SAMME')
+  classifier.fit(svm_train_features, svm_train_classes)
+  print("adaboost accuracy: " +
+        str(classifier.score(svm_test_features, svm_test_classes)))
+
 # mimic_parse()
 load()
-report()
+# report()
+boost_report()
