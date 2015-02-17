@@ -24,10 +24,10 @@ def parse():
         file_p = open(filename, 'r')
         record.process(file_p)
         file_p.close()
-        if (len(record.intervals) > interval_base - 10):
+        if (len(record.intervals) > 0):
           records.append(record)
 
-  # pickle.dump(records, open("records.pickle", "wb"))
+  pickle.dump(records, open("records.pickle", "wb"))
 
 def load():
   my_records = pickle.load(open("records.pickle", "rb"))
@@ -35,6 +35,12 @@ def load():
     records.append(record)
 
 def split_sets(test_split_size):
+  scd_count = 0
+  for record in records:
+    if (record.my_class == "SCD"):
+      scd_count += 1
+  print(scd_count)
+
   featuresets = list()
   for record in records:
     featuresets.append((record.features, record.my_class))
@@ -136,14 +142,23 @@ def boost_report(test_split_size):
   classifier = AdaBoostClassifier(
     base_estimator=svm_classifier,
     n_estimators=100,
-    algorithm='SAMME')
+    algorithm='SAMME',
+    learning_rate=0.5)
   classifier.fit(svm_train_features, svm_train_classes)
   print("adaboost accuracy: " +
         str(classifier.score(svm_test_features, svm_test_classes)))
 
+  classifier2 = AdaBoostClassifier(
+    n_estimators=100,
+    algorithm='SAMME',
+    learning_rate=0.5)
+  classifier2.fit(svm_train_features, svm_train_classes)
+  print("adaboost2 accuracy: " +
+        str(classifier2.score(svm_test_features, svm_test_classes)))
+
 
 parse()
-# load()
+load()
 # display_avgs()
 # report(3)
 boost_report(3)

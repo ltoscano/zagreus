@@ -48,7 +48,7 @@ class MyRecord:
           self.intervals.append((curr_time, float(words[2])))
       else:
         self.intervals.append((curr_time, float(words[2])))
-    if (len(self.intervals) > interval_base - 10):
+    if (len(self.intervals) > 0):
       self.generate_features()
 
   def generate_median(self):
