@@ -118,21 +118,30 @@ def display_avgs():
   print(norm_list)
 
 def boost_report(test_split_size):
-  sets_split = split_sets(test_split_size)
-  train_set = sets_split[0]
-  test_set = sets_split[1]
+  scd_count = 0
+  for record in records:
+    if (record.my_class == "SCD"):
+      scd_count += 1
+  print(scd_count)
+
+  shuffle(records)
+  split = int(len(records) * (1 / test_split_size))
+  print(len(records))
+  train_set = records[:(len(records) - split)]
+  test_set = records[split:]
+  print("split:", test_split_size, "train:", len(train_set), "test:", split)
 
   svm_train_features = list()
   svm_train_classes = list()
   svm_test_features = list()
   svm_test_classes = list()
 
-  for item in train_set:
-    svm_train_features.append(list(item[0].values()))
-    svm_train_classes.append(item[1])
-  for item in test_set:
-    svm_test_features.append(list(item[0].values()))
-    svm_test_classes.append(item[1])
+  for record in train_set:
+    svm_train_features.append(list(record.features.values()))
+    svm_train_classes.append(record.my_class)
+  for record in test_set:
+    svm_test_features.append(list(record.features.values()))
+    svm_test_classes.append(record.my_class)
 
   svm_classifier = svm.SVC(kernel="linear", C=0.1)
   svm_classifier.fit(svm_train_features, svm_train_classes)
@@ -141,28 +150,27 @@ def boost_report(test_split_size):
 
   classifier = AdaBoostClassifier(
     base_estimator=svm_classifier,
-    n_estimators=100,
-    algorithm='SAMME',
-    learning_rate=0.5)
+    n_estimators=50,
+    algorithm='SAMME'
+  )
   classifier.fit(svm_train_features, svm_train_classes)
   print("adaboost accuracy: " +
         str(classifier.score(svm_test_features, svm_test_classes)))
 
   classifier2 = AdaBoostClassifier(
-    n_estimators=100,
-    algorithm='SAMME',
-    learning_rate=0.5)
+    n_estimators=50,
+    algorithm='SAMME'
+  )
   classifier2.fit(svm_train_features, svm_train_classes)
   print("adaboost2 accuracy: " +
         str(classifier2.score(svm_test_features, svm_test_classes)))
 
 
-parse()
+# parse()
 load()
 # display_avgs()
-# report(3)
 boost_report(3)
-boost_report(3)
-boost_report(3)
-boost_report(3)
-boost_report(3)
+# boost_report(3)
+# boost_report(3)
+# boost_report(3)
+# boost_report(3)

@@ -41,6 +41,146 @@
 # ann2rr -r nsrdb/19140 -a atr -f 0 -t 91648 -v T -i s3 -V t -w -W >samples/NORM_RR/NORM_17.txt
 # ann2rr -r nsrdb/19830 -a atr -f 0 -t 91648 -v T -i s3 -V t -w -W >samples/NORM_RR/NORM_18.txt
 
+# ann2rr -r mvtdb/data/0003_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_1.txt
+# ann2rr -r mvtdb/data/0008_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_2.txt
+# ann2rr -r mvtdb/data/0013_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_3.txt
+# ann2rr -r mvtdb/data/0015_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_4.txt
+# ann2rr -r mvtdb/data/0026_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_5.txt
+# ann2rr -r mvtdb/data/0030_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_6.txt
+# ann2rr -r mvtdb/data/0039_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_7.txt
+# ann2rr -r mvtdb/data/0040_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_8.txt
+# ann2rr -r mvtdb/data/0041_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_9.txt
+# ann2rr -r mvtdb/data/0043_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_10.txt
+# ann2rr -r mvtdb/data/0044_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_11.txt
+# ann2rr -r mvtdb/data/0050_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_12.txt
+# ann2rr -r mvtdb/data/0059_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_13.txt
+# ann2rr -r mvtdb/data/0065_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_14.txt
+# ann2rr -r mvtdb/data/0067_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_15.txt
+# ann2rr -r mvtdb/data/0072_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_16.txt
+# ann2rr -r mvtdb/data/0074_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_17.txt
+# ann2rr -r mvtdb/data/0075_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_18.txt
+# ann2rr -r mvtdb/data/0078_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_19.txt
+# ann2rr -r mvtdb/data/0079_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_20.txt
+# ann2rr -r mvtdb/data/0082_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_21.txt
+# ann2rr -r mvtdb/data/0088_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_22.txt
+# ann2rr -r mvtdb/data/0095_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_23.txt
+# ann2rr -r mvtdb/data/0097_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_24.txt
+# ann2rr -r mvtdb/data/0115_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_25.txt
+# ann2rr -r mvtdb/data/0135_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_26.txt
+# ann2rr -r mvtdb/data/0164_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_27.txt
+# ann2rr -r mvtdb/data/0174_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_28.txt
+# ann2rr -r mvtdb/data/0175_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_29.txt
+# ann2rr -r mvtdb/data/0182_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_30.txt
+# ann2rr -r mvtdb/data/0183_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_31.txt
+# ann2rr -r mvtdb/data/0196_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_32.txt
+# ann2rr -r mvtdb/data/0209_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_33.txt
+# ann2rr -r mvtdb/data/0210_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_34.txt
+# ann2rr -r mvtdb/data/0216_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_35.txt
+# ann2rr -r mvtdb/data/0251_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_36.txt
+# ann2rr -r mvtdb/data/0263_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_37.txt
+# ann2rr -r mvtdb/data/0293_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_38.txt
+# ann2rr -r mvtdb/data/0315_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_39.txt
+# ann2rr -r mvtdb/data/0340_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_40.txt
+# ann2rr -r mvtdb/data/0358_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_41.txt
+# ann2rr -r mvtdb/data/8005_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_42.txt
+# ann2rr -r mvtdb/data/8007_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_43.txt
+# ann2rr -r mvtdb/data/8010_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_44.txt
+# ann2rr -r mvtdb/data/8013_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_45.txt
+# ann2rr -r mvtdb/data/8014_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_46.txt
+# ann2rr -r mvtdb/data/8015_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_47.txt
+# ann2rr -r mvtdb/data/8019_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_48.txt
+# ann2rr -r mvtdb/data/8021_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_49.txt
+# ann2rr -r mvtdb/data/8022_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_50.txt
+# ann2rr -r mvtdb/data/8023_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_51.txt
+# ann2rr -r mvtdb/data/8031_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_52.txt
+# ann2rr -r mvtdb/data/8036_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_53.txt
+# ann2rr -r mvtdb/data/8049_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_54.txt
+# ann2rr -r mvtdb/data/8051_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_55.txt
+# ann2rr -r mvtdb/data/8076_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_56.txt
+# ann2rr -r mvtdb/data/8079_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_57.txt
+# ann2rr -r mvtdb/data/8096_vt1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VT_RR/VT_58.txt
+
+# ann2rr -r mvtdb/data/0029_vf1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VF_RR/VF_1.txt
+# ann2rr -r mvtdb/data/0030_vf1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VF_RR/VF_2.txt
+# ann2rr -r mvtdb/data/0051_vf1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VF_RR/VF_3.txt
+# ann2rr -r mvtdb/data/0062_vf1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VF_RR/VF_4.txt
+# ann2rr -r mvtdb/data/0071_vf1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VF_RR/VF_5.txt
+# ann2rr -r mvtdb/data/0081_vf1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VF_RR/VF_6.txt
+# ann2rr -r mvtdb/data/0086_vf1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VF_RR/VF_7.txt
+# ann2rr -r mvtdb/data/0094_vf1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VF_RR/VF_8.txt
+# ann2rr -r mvtdb/data/0115_vf1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VF_RR/VF_9.txt
+# ann2rr -r mvtdb/data/0159_vf1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VF_RR/VF_10.txt
+# ann2rr -r mvtdb/data/0201_vf1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VF_RR/VF_11.txt
+# ann2rr -r mvtdb/data/0209_vf1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VF_RR/VF_12.txt
+# ann2rr -r mvtdb/data/0213_vf1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VF_RR/VF_13.txt
+# ann2rr -r mvtdb/data/0216_vf1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VF_RR/VF_14.txt
+# ann2rr -r mvtdb/data/0217_vf1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VF_RR/VF_15.txt
+# ann2rr -r mvtdb/data/0231_vf1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VF_RR/VF_16.txt
+# ann2rr -r mvtdb/data/0243_vf1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VF_RR/VF_17.txt
+# ann2rr -r mvtdb/data/0269_vf1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VF_RR/VF_18.txt
+# ann2rr -r mvtdb/data/0284_vf1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VF_RR/VF_19.txt
+# ann2rr -r mvtdb/data/0369_vf1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VF_RR/VF_20.txt
+# ann2rr -r mvtdb/data/8009_vf1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VF_RR/VF_21.txt
+# ann2rr -r mvtdb/data/8010_vf1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VF_RR/VF_22.txt
+# ann2rr -r mvtdb/data/8013_vf1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VF_RR/VF_23.txt
+# ann2rr -r mvtdb/data/8024_vf1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VF_RR/VF_24.txt
+# ann2rr -r mvtdb/data/8075_vf1 -a qrs -f 0 -t 0 -v T -i s3 -V t -w -W >samples/VF_RR/VF_25.txt
+
+# ann2rr -r nsr2db/nsr001 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_19.txt
+# ann2rr -r nsr2db/nsr002 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_20.txt
+# ann2rr -r nsr2db/nsr003 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_21.txt
+# ann2rr -r nsr2db/nsr004 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_22.txt
+# ann2rr -r nsr2db/nsr005 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_23.txt
+# ann2rr -r nsr2db/nsr006 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_24.txt
+# ann2rr -r nsr2db/nsr007 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_25.txt
+# ann2rr -r nsr2db/nsr008 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_26.txt
+# ann2rr -r nsr2db/nsr009 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_27.txt
+# ann2rr -r nsr2db/nsr010 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_28.txt
+# ann2rr -r nsr2db/nsr011 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_29.txt
+# ann2rr -r nsr2db/nsr012 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_30.txt
+# ann2rr -r nsr2db/nsr013 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_31.txt
+# ann2rr -r nsr2db/nsr014 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_32.txt
+# ann2rr -r nsr2db/nsr015 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_33.txt
+# ann2rr -r nsr2db/nsr016 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_34.txt
+# ann2rr -r nsr2db/nsr017 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_35.txt
+# ann2rr -r nsr2db/nsr018 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_36.txt
+# ann2rr -r nsr2db/nsr019 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_37.txt
+# ann2rr -r nsr2db/nsr020 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_38.txt
+# ann2rr -r nsr2db/nsr021 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_39.txt
+# ann2rr -r nsr2db/nsr022 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_40.txt
+# ann2rr -r nsr2db/nsr023 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_41.txt
+# ann2rr -r nsr2db/nsr024 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_42.txt
+# ann2rr -r nsr2db/nsr025 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_43.txt
+# ann2rr -r nsr2db/nsr026 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_44.txt
+# ann2rr -r nsr2db/nsr027 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_45.txt
+# ann2rr -r nsr2db/nsr028 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_46.txt
+# ann2rr -r nsr2db/nsr029 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_47.txt
+# ann2rr -r nsr2db/nsr030 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_48.txt
+# ann2rr -r nsr2db/nsr031 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_49.txt
+# ann2rr -r nsr2db/nsr032 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_50.txt
+# ann2rr -r nsr2db/nsr033 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_51.txt
+# ann2rr -r nsr2db/nsr034 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_52.txt
+# ann2rr -r nsr2db/nsr035 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_53.txt
+# ann2rr -r nsr2db/nsr036 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_54.txt
+# ann2rr -r nsr2db/nsr037 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_55.txt
+# ann2rr -r nsr2db/nsr038 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_56.txt
+# ann2rr -r nsr2db/nsr039 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_57.txt
+# ann2rr -r nsr2db/nsr040 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_58.txt
+# ann2rr -r nsr2db/nsr041 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_59.txt
+# ann2rr -r nsr2db/nsr042 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_60.txt
+# ann2rr -r nsr2db/nsr043 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_61.txt
+# ann2rr -r nsr2db/nsr044 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_62.txt
+# ann2rr -r nsr2db/nsr045 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_63.txt
+# ann2rr -r nsr2db/nsr046 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_64.txt
+# ann2rr -r nsr2db/nsr047 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_65.txt
+# ann2rr -r nsr2db/nsr048 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_66.txt
+# ann2rr -r nsr2db/nsr049 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_67.txt
+# ann2rr -r nsr2db/nsr050 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_68.txt
+# ann2rr -r nsr2db/nsr051 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_69.txt
+# ann2rr -r nsr2db/nsr052 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_70.txt
+# ann2rr -r nsr2db/nsr053 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_71.txt
+# ann2rr -r nsr2db/nsr054 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_72.txt
+
 # ann2rr -r mitdb/100 -a atr -f 0 -t 90510 -v T -i s3 -V t -w -W >samples/ARRH_RR/ARRH_1.txt
 # ann2rr -r mitdb/101 -a atr -f 0 -t 90510 -v T -i s3 -V t -w -W >samples/ARRH_RR/ARRH_2.txt
 # ann2rr -r mitdb/102 -a atr -f 0 -t 90510 -v T -i s3 -V t -w -W >samples/ARRH_RR/ARRH_3.txt
@@ -89,143 +229,3 @@
 # ann2rr -r mitdb/232 -a atr -f 0 -t 90510 -v T -i s3 -V t -w -W >samples/ARRH_RR/ARRH_58.txt
 # ann2rr -r mitdb/233 -a atr -f 0 -t 90510 -v T -i s3 -V t -w -W >samples/ARRH_RR/ARRH_59.txt
 # ann2rr -r mitdb/234 -a atr -f 0 -t 90510 -v T -i s3 -V t -w -W >samples/ARRH_RR/ARRH_60.txt
-
-# ann2rr -r mvtdb/data/0003_mr5 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_1.txt
-# ann2rr -r mvtdb/data/0008_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_2.txt
-# ann2rr -r mvtdb/data/0013_mr3 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_3.txt
-# ann2rr -r mvtdb/data/0015_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_4.txt
-# ann2rr -r mvtdb/data/0026_mr2 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_5.txt
-# ann2rr -r mvtdb/data/0030_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_6.txt
-# ann2rr -r mvtdb/data/0039_mr2 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_7.txt
-# ann2rr -r mvtdb/data/0040_mr2 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_8.txt
-# ann2rr -r mvtdb/data/0041_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_9.txt
-# ann2rr -r mvtdb/data/0043_mr3 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_10.txt
-# ann2rr -r mvtdb/data/0044_mr3 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_11.txt
-# ann2rr -r mvtdb/data/0050_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_12.txt
-# ann2rr -r mvtdb/data/0059_mr2 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_13.txt
-# ann2rr -r mvtdb/data/0065_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_14.txt
-# ann2rr -r mvtdb/data/0067_mr2 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_15.txt
-# ann2rr -r mvtdb/data/0072_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_16.txt
-# ann2rr -r mvtdb/data/0074_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_17.txt
-# ann2rr -r mvtdb/data/0075_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_18.txt
-# ann2rr -r mvtdb/data/0078_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_19.txt
-# ann2rr -r mvtdb/data/0079_mr3 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_20.txt
-# ann2rr -r mvtdb/data/0082_mr4 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_21.txt
-# ann2rr -r mvtdb/data/0088_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_22.txt
-# ann2rr -r mvtdb/data/0095_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_23.txt
-# ann2rr -r mvtdb/data/0097_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_24.txt
-# ann2rr -r mvtdb/data/0115_mr2 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_25.txt
-# ann2rr -r mvtdb/data/0135_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_26.txt
-# ann2rr -r mvtdb/data/0164_mr5 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_27.txt
-# ann2rr -r mvtdb/data/0174_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_28.txt
-# ann2rr -r mvtdb/data/0175_mr3 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_29.txt
-# ann2rr -r mvtdb/data/0182_mr2 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_30.txt
-# ann2rr -r mvtdb/data/0183_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_31.txt
-# ann2rr -r mvtdb/data/0196_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_32.txt
-# ann2rr -r mvtdb/data/0209_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_33.txt
-# ann2rr -r mvtdb/data/0210_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_34.txt
-# ann2rr -r mvtdb/data/0216_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_35.txt
-# ann2rr -r mvtdb/data/0251_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_36.txt
-# ann2rr -r mvtdb/data/0263_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_37.txt
-# ann2rr -r mvtdb/data/0293_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_38.txt
-# ann2rr -r mvtdb/data/0315_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_39.txt
-# ann2rr -r mvtdb/data/0340_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_40.txt
-# ann2rr -r mvtdb/data/0358_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_41.txt
-# ann2rr -r mvtdb/data/8005_mr5 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_42.txt
-# ann2rr -r mvtdb/data/8007_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_43.txt
-# ann2rr -r mvtdb/data/8010_mr3 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_44.txt
-# ann2rr -r mvtdb/data/8013_mr2 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_45.txt
-# ann2rr -r mvtdb/data/8014_mr2 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_46.txt
-# ann2rr -r mvtdb/data/8015_mr2 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_47.txt
-# ann2rr -r mvtdb/data/8019_mr4 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_48.txt
-# ann2rr -r mvtdb/data/8021_mr2 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_49.txt
-# ann2rr -r mvtdb/data/8022_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_50.txt
-# ann2rr -r mvtdb/data/8023_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_51.txt
-# ann2rr -r mvtdb/data/8031_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_52.txt
-# ann2rr -r mvtdb/data/8036_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_53.txt
-# ann2rr -r mvtdb/data/8049_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_54.txt
-# ann2rr -r mvtdb/data/8051_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_55.txt
-# ann2rr -r mvtdb/data/8076_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_56.txt
-# ann2rr -r mvtdb/data/8079_mr2 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_57.txt
-# ann2rr -r mvtdb/data/8096_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VT_RR/VT_58.txt
-
-# ann2rr -r mvtdb/data/0029_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VF_RR/VF_1.txt
-# ann2rr -r mvtdb/data/0030_mr2 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VF_RR/VF_2.txt
-# ann2rr -r mvtdb/data/0051_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VF_RR/VF_3.txt
-# ann2rr -r mvtdb/data/0062_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VF_RR/VF_4.txt
-# ann2rr -r mvtdb/data/0071_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VF_RR/VF_5.txt
-# ann2rr -r mvtdb/data/0081_mr2 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VF_RR/VF_6.txt
-# ann2rr -r mvtdb/data/0086_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VF_RR/VF_7.txt
-# ann2rr -r mvtdb/data/0094_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VF_RR/VF_8.txt
-# ann2rr -r mvtdb/data/0115_mra -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VF_RR/VF_9.txt
-# ann2rr -r mvtdb/data/0159_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VF_RR/VF_10.txt
-# ann2rr -r mvtdb/data/0201_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VF_RR/VF_11.txt
-# ann2rr -r mvtdb/data/0209_mra -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VF_RR/VF_12.txt
-# ann2rr -r mvtdb/data/0213_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VF_RR/VF_13.txt
-# ann2rr -r mvtdb/data/0216_mra -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VF_RR/VF_14.txt
-# ann2rr -r mvtdb/data/0217_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VF_RR/VF_15.txt
-# ann2rr -r mvtdb/data/0231_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VF_RR/VF_16.txt
-# ann2rr -r mvtdb/data/0243_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VF_RR/VF_17.txt
-# ann2rr -r mvtdb/data/0269_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VF_RR/VF_18.txt
-# ann2rr -r mvtdb/data/0284_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VF_RR/VF_19.txt
-# ann2rr -r mvtdb/data/0369_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VF_RR/VF_20.txt
-# ann2rr -r mvtdb/data/8009_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VF_RR/VF_21.txt
-# ann2rr -r mvtdb/data/8010_mra -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VF_RR/VF_22.txt
-# ann2rr -r mvtdb/data/8013_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VF_RR/VF_23.txt
-# ann2rr -r mvtdb/data/8024_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VF_RR/VF_24.txt
-# ann2rr -r mvtdb/data/8075_mr1 -a qrs -f 0 -t 0 -v t -i s3 -V t -w -W >samples/VF_RR/VF_25.txt
-
-ann2rr -r nsr2db/nsr001 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_19.txt
-ann2rr -r nsr2db/nsr002 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_20.txt
-ann2rr -r nsr2db/nsr003 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_21.txt
-ann2rr -r nsr2db/nsr004 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_22.txt
-ann2rr -r nsr2db/nsr005 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_23.txt
-ann2rr -r nsr2db/nsr006 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_24.txt
-ann2rr -r nsr2db/nsr007 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_25.txt
-ann2rr -r nsr2db/nsr008 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_26.txt
-ann2rr -r nsr2db/nsr009 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_27.txt
-ann2rr -r nsr2db/nsr010 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_28.txt
-ann2rr -r nsr2db/nsr011 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_29.txt
-ann2rr -r nsr2db/nsr012 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_30.txt
-ann2rr -r nsr2db/nsr013 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_31.txt
-ann2rr -r nsr2db/nsr014 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_32.txt
-ann2rr -r nsr2db/nsr015 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_33.txt
-ann2rr -r nsr2db/nsr016 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_34.txt
-ann2rr -r nsr2db/nsr017 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_35.txt
-ann2rr -r nsr2db/nsr018 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_36.txt
-ann2rr -r nsr2db/nsr019 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_37.txt
-ann2rr -r nsr2db/nsr020 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_38.txt
-ann2rr -r nsr2db/nsr021 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_39.txt
-ann2rr -r nsr2db/nsr022 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_40.txt
-ann2rr -r nsr2db/nsr023 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_41.txt
-ann2rr -r nsr2db/nsr024 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_42.txt
-ann2rr -r nsr2db/nsr025 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_43.txt
-ann2rr -r nsr2db/nsr026 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_44.txt
-ann2rr -r nsr2db/nsr027 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_45.txt
-ann2rr -r nsr2db/nsr028 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_46.txt
-ann2rr -r nsr2db/nsr029 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_47.txt
-ann2rr -r nsr2db/nsr030 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_48.txt
-ann2rr -r nsr2db/nsr031 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_49.txt
-ann2rr -r nsr2db/nsr032 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_50.txt
-ann2rr -r nsr2db/nsr033 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_51.txt
-ann2rr -r nsr2db/nsr034 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_52.txt
-ann2rr -r nsr2db/nsr035 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_53.txt
-ann2rr -r nsr2db/nsr036 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_54.txt
-ann2rr -r nsr2db/nsr037 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_55.txt
-ann2rr -r nsr2db/nsr038 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_56.txt
-ann2rr -r nsr2db/nsr039 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_57.txt
-ann2rr -r nsr2db/nsr040 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_58.txt
-ann2rr -r nsr2db/nsr041 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_59.txt
-ann2rr -r nsr2db/nsr042 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_60.txt
-ann2rr -r nsr2db/nsr043 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_61.txt
-ann2rr -r nsr2db/nsr044 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_62.txt
-ann2rr -r nsr2db/nsr045 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_63.txt
-ann2rr -r nsr2db/nsr046 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_64.txt
-ann2rr -r nsr2db/nsr047 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_65.txt
-ann2rr -r nsr2db/nsr048 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_66.txt
-ann2rr -r nsr2db/nsr049 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_67.txt
-ann2rr -r nsr2db/nsr050 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_68.txt
-ann2rr -r nsr2db/nsr051 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_69.txt
-ann2rr -r nsr2db/nsr052 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_70.txt
-ann2rr -r nsr2db/nsr053 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_71.txt
-ann2rr -r nsr2db/nsr054 -a ecg -f 0 -t 0 -v T -i s3 -V T -w -W >samples/NORM_RR/NORM_72.txt
