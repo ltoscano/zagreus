@@ -165,7 +165,6 @@ def boost_report(test_split_size):
   print("adaboost2 accuracy: " +
         str(classifier2.score(svm_test_features, svm_test_classes)))
 
-
 # parse()
 load()
 # display_avgs()
