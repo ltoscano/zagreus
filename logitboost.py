@@ -12,6 +12,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import GaussianNB
+from logitboost_sample import LogitBoostClassifier
 # decision tree, svm, knn, naive bayes
 
 rootdir = '/Users/luke/Documents/ekg_analysis/zagreus/samples/'
@@ -67,16 +68,24 @@ def report():
   print("linear kernel svm accuracy: " +
         str(svm_classifier.score(test_features, test_classes)))
 
-  classifier_list = list()
-  for index in range(15):
-    temp_classifier = SVC(kernel="linear", C=0.1)
-    temp_classifier.fit(train_features, train_classes)
-    classifier_list.append(temp_classifier)
+  # classifier_list = list()
+  # for index in range(15):
+  #   temp_classifier = SVC(kernel="linear", C=0.1)
+  #   temp_classifier.fit(train_features, train_classes)
+  #   classifier_list.append(temp_classifier)
 
-  classifier = MyBoostClassifier(classifier_list)
-  # classifier.fit(train_features, train_classes)
-  print("adaboost accuracy: " +
-        str(classifier.score(test_features, test_classes)))
+  # classifier = MyBoostClassifier(classifier_list)
+  # # classifier.fit(train_features, train_classes)
+  # print("adaboost accuracy: " +
+  #       str(classifier.score(test_features, test_classes)))
+
+  classifier = LogitBoostClassifier(n_estimators=50,
+                                    base_estimator=SVC(kernel="linear", C=0.1),
+                                    algorithm='SAMME')
+  classifier.fit(numpy.array(train_features), numpy.array(train_classes))
+  print("logitboost accuracy: " +
+        str(classifier.score(numpy.array(test_features),
+                                 numpy.array(test_classes))))
 
 # default_estimators = {
 #   "DT": 1,
