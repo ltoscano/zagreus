@@ -24,15 +24,79 @@ def load():
   for record in my_records:
     records.append(record)
 
-class MyBoostClassifier(ClassifierMixin):
-  def __init__(self, estimators):
-    self.estimators = estimators
+class MyBoostClassifier(LogitBoostClassifier):
+  def __init__(self,
+               base_estimator=DecisionTreeClassifier(max_depth=1),
+               n_estimators=50,
+               estimator_params=tuple(),
+               learning_rate=1.,
+               algorithm='SAMME.R'):
+    self.base_estimator = base_estimator
+    self.n_estimators = n_estimators
+    self.estimator_params = estimator_params
+    self.learning_rate = learning_rate
+    self.algorithm = algorithm
 
-  def score(self, features, classes):
-    total_score = 0
-    for classifier in self.estimators:
-      total_score += classifier.score(test_features, test_classes)
-    return total_score / len(self.estimators)
+  def set_estimators(self, estimators):
+    self.n_estimators = len(estimators)
+    self.estimators_ = numpy.array(estimators)
+
+  def fit(self, X, y, sample_weight=None):
+    # Check parameters.
+    if self.learning_rate <= 0:
+      raise ValueError("learning_rate must be greater than zero.")
+
+    if sample_weight is None:
+      # Initialize weights to 1 / n_samples.
+      sample_weight = numpy.empty(X.shape[0], dtype=numpy.float)
+      sample_weight[:] = 1. / X.shape[0]
+    else:
+      # Normalize existing weights.
+      sample_weight = sample_weight / sample_weight.sum(dtype=numpy.float64)
+
+    # Check that the sample weights sum is positive.
+    if sample_weight.sum() <= 0:
+      raise ValueError(
+        "Attempting to fit with a non-positive "
+        "weighted number of samples.")
+
+    # Clear any previous fit results.
+    # self.estimators_ = []
+    self.estimator_weights_ = numpy.zeros(self.n_estimators, dtype=numpy.float)
+    self.estimator_errors_ = numpy.ones(self.n_estimators, dtype=numpy.float)
+
+    for (iboost, estimator) in enumerate(self.estimators_):
+      # Fit the estimator.
+      estimator.fit(X, y, sample_weight=sample_weight)
+
+      if iboost == 0:
+        self.classes_ = getattr(estimator, 'classes_', None)
+        self.n_classes_ = len(self.classes_)
+
+      # Generate estimator predictions.
+      y_pred = estimator.predict(X)
+
+      # Instances incorrectly classified.
+      incorrect = y_pred != y
+
+      # Error fraction.
+      estimator_error = numpy.mean(
+        numpy.average(incorrect, weights=sample_weight, axis=0))
+
+      # Boost weight using multi-class AdaBoost SAMME alg.
+      estimator_weight = self.learning_rate * (
+        numpy.log((1. - estimator_error) / estimator_error) +
+        numpy.log(self.n_classes_ - 1.))
+
+      # Only boost the weights if there is another iteration of fitting.
+      if not iboost == self.n_estimators - 1:
+        # Only boost positive weights (logistic loss).
+        sample_weight *= numpy.log(1 + numpy.exp(estimator_weight * incorrect *
+                                   ((sample_weight > 0) |
+                                    (estimator_weight < 0))))
+
+      self.estimator_weights_[iboost] = estimator_weight
+      self.estimator_errors_[iboost] = estimator_error
 
 def random_split(test_split_size):
   scd_count = 0
@@ -68,71 +132,14 @@ def report():
   print("linear kernel svm accuracy: " +
         str(svm_classifier.score(test_features, test_classes)))
 
-  # classifier_list = list()
-  # for index in range(15):
-  #   temp_classifier = SVC(kernel="linear", C=0.1)
-  #   temp_classifier.fit(train_features, train_classes)
-  #   classifier_list.append(temp_classifier)
-
-  # classifier = MyBoostClassifier(classifier_list)
-  # # classifier.fit(train_features, train_classes)
-  # print("adaboost accuracy: " +
-  #       str(classifier.score(test_features, test_classes)))
-
-  classifier = LogitBoostClassifier(n_estimators=50,
-                                    base_estimator=SVC(kernel="linear", C=0.1),
-                                    algorithm='SAMME')
+  classifier = MyBoostClassifier()
+  estimator_list = numpy.array([SVC(kernel="linear", C=0.1, probability=True),
+                                DecisionTreeClassifier(max_depth=1)])
+  classifier.set_estimators(estimator_list)
   classifier.fit(numpy.array(train_features), numpy.array(train_classes))
   print("logitboost accuracy: " +
         str(classifier.score(numpy.array(test_features),
-                                 numpy.array(test_classes))))
-
-# default_estimators = {
-#   "DT": 1,
-#   "SVM": 1,
-#   "KNN": 1,
-#   "NB": 1,
-# }
-
-# estimator_funcs = {
-#   "DT": LogitBoostClassifier.build_dt,
-#   "SVM": LogitBoostClassifier.build_svm,
-#   "KNN": LogitBoostClassifier.build_knn,
-#   "NB": LogitBoostClassifier.build_nb,
-# }
-
-# class LogitBoostClassifier(ClassifierMixin):
-#   # LogitBoost Classifier with multiple sklearn implemented classifiers
-#   # as weak learners.
-#   def __init__(self, estimators_dict=default_estimators):
-#     self.estimators_dict = estimators_dict
-
-#   def num_estimators(self):
-#     return sum(self.estimators_dict.values())
-
-#   def fit(self, x, y):
-#     sample_weight = np.empty(x.shape[0], dtype=np.float)
-#     sample_weight[:] = 1. / x.shape[0]
-#     self.estimators = list()
-
-#     for estimator in self.estimators_dict.keys():
-#       estimator_funcs[estimator](self.estimators_dict[estimator])
-
-#   def build_dt(self, amount):
-#     for index in amount:
-#       self.estimators.append(DecisionTreeClassifier())
-
-#   def build_svm(self, amount):
-#     for index in amount:
-#       self.estimators.append(SVC())
-
-#   def build_knn(self, amount):
-#     for index in amount:
-#       self.estimators.append(KNeighborsClassifier())
-
-#   def build_nb(self, amount):
-#     for index in amount:
-#       self.estimators.append(GaussianNB())
+                             numpy.array(test_classes))))
 
 load()
 report()
