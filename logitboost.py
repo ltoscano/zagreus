@@ -5,19 +5,25 @@ from random import shuffle
 from my_record import MyRecord, interval_base
 import pickle
 
-from sklearn.base import ClassifierMixin
 from sklearn.ensemble import AdaBoostClassifier
-
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.svm import SVC
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.naive_bayes import GaussianNB
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.linear_model import Perceptron
+
 from logitboost_sample import LogitBoostClassifier
-# decision tree, svm, knn, naive bayes
+# svm, knn, MLP, ANN
 
 rootdir = '/Users/luke/Documents/ekg_analysis/zagreus/samples/'
 repositories = ['SDDB_RR', 'NORM_RR', 'VF_RR', 'VT_RR']
 records = list()
+
+
+estimator_list = numpy.array([DecisionTreeClassifier(max_depth=1),
+                              MultinomialNB(),
+                              Perceptron(),
+                              SVC(kernel="linear", C=0.1)])
+boosting_classifier_size = 5
 
 def load():
   my_records = pickle.load(open("records.pickle", "rb"))
@@ -132,10 +138,12 @@ def report():
   print("linear kernel svm accuracy: " +
         str(svm_classifier.score(test_features, test_classes)))
 
-  classifier = MyBoostClassifier()
-  estimator_list = numpy.array([SVC(kernel="linear", C=0.1, probability=True),
-                                DecisionTreeClassifier(max_depth=1)])
-  classifier.set_estimators(estimator_list)
+  classifier = MyBoostClassifier(algorithm="SAMME")
+  new_estimator_list = list()
+  for estimator in estimator_list:
+    for index in range(boosting_classifier_size):
+      new_estimator_list.append(copy.deepcopy(estimator))
+  classifier.set_estimators(new_estimator_list)
   classifier.fit(numpy.array(train_features), numpy.array(train_classes))
   print("logitboost accuracy: " +
         str(classifier.score(numpy.array(test_features),
