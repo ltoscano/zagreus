@@ -27,7 +27,12 @@ boosting_classifier_size = 5
 
 def load():
   my_records = pickle.load(open("records.pickle", "rb"))
+  my_records_band = pickle.load(open("band_records.pickle", "rb"))
+
   for record in my_records:
+    records.append(record)
+
+  for record in my_records_band:
     records.append(record)
 
 class MyBoostClassifier(LogitBoostClassifier):

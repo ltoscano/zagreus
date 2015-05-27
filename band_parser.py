@@ -4,6 +4,7 @@ import string
 import nltk
 import math
 import pickle
+from my_record import MyRecord, interval_base
 
 rootdir = '/Users/luke/Documents/thesis_sca/zagreus/samples/BAND_HR'
 outputdir = '/Users/luke/Documents/thesis_sca/zagreus/samples/BAND_NORM'
@@ -28,6 +29,16 @@ def write_file(heart_rates, index):
   file_p.writelines(heart_rates)
   file_p.close()
 
+def create_record(heart_rates, my_file):
+  record = MyRecord("NORM_RR", my_file)
+  record.filename = my_file
+  curr_time = 0
+  for rate in heart_rates:
+    curr_time += float(rate)
+    record.intervals.append((curr_time, float(rate)))
+  record.generate_features()
+  records.append(record)
+
 def parse():
   index = 0
   for subdir, dirs, files in os.walk(rootdir):
@@ -41,5 +52,9 @@ def parse():
 
         write_file(heart_rates, index)
         index += 1
+
+        create_record(heart_rates, "BAND_" + str(index) + ".txt")
+
+  pickle.dump(records, open("band_records.pickle", "wb"))
 
 parse()
