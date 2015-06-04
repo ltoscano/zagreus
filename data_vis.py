@@ -120,6 +120,10 @@ def sort_axes(sort_type, axes_array, norm_features, scd_features):
   for index, key in enumerate(axes_array):
     if sort_type == "absolute":
       deltas_dict[key] = -abs(norm_features[index] - scd_features[index])
+    elif sort_type == "norm":
+      deltas_dict[key] = scd_features[index]
+    elif sort_type == "scd":
+      deltas_dict[key] = norm_features[index]
     else:
       deltas_dict[key] = norm_features[index] - scd_features[index]
 
@@ -130,7 +134,7 @@ def sort_axes(sort_type, axes_array, norm_features, scd_features):
     new_axes.append(key)
   return new_axes
 
-def run(sort_type):
+def run(sort_type, normalized=True):
   (norm_features, scd_features) = sort_features()
   axes_array = list(norm_features.keys())
   dataset = normalize_features(norm_features, scd_features)
@@ -147,6 +151,9 @@ def run(sort_type):
     for key in axes_array:
       feature_list.append(record.features[key])
     feature_array.append(feature_list)
+
+  if normalized:
+    feature_array = normalize(feature_array, norm='l2', axis=0, copy=False)
 
   colors = list()
   for record in records:

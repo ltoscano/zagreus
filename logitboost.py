@@ -20,10 +20,8 @@ records = list()
 
 
 estimator_list = numpy.array([DecisionTreeClassifier(max_depth=1),
-                              MultinomialNB(),
-                              Perceptron(),
                               SVC(kernel="linear", C=0.1)])
-boosting_classifier_size = 5
+boosting_classifier_size = 10
 
 def load():
   my_records = pickle.load(open("records.pickle", "rb"))
@@ -126,7 +124,7 @@ def random_split(train_split_size):
   return (train_set, test_set)
 
 def report():
-  (train_set, test_set) = random_split(0.8)
+  (train_set, test_set) = random_split(0.3)
   train_features = list()
   train_classes = list()
   test_features = list()
@@ -139,8 +137,8 @@ def report():
     test_features.append(list(record.features.values()))
     test_classes.append(record.my_class)
 
-  svm_classifier = SVC(kernel="linear", C=0.1)
-  svm_classifier.fit(train_features, train_classes)
+  # svm_classifier = SVC(kernel="linear", C=0.1)
+  # svm_classifier.fit(train_features, train_classes)
   # print("linear kernel svm accuracy: " +
   #       str(svm_classifier.score(test_features, test_classes)))
   # print("svm accuracy: " +
@@ -154,31 +152,31 @@ def report():
   #       str(recall_score(numpy.array(test_classes),
   #                        svm_classifier.predict(numpy.array(test_features)),
   #                        pos_label='SCD')))
-  print("svm f1 score: " +
-        str(f1_score(numpy.array(test_classes),
-                     svm_classifier.predict(numpy.array(test_features)),
-                     pos_label='SCD')))
+  # print("svm f1 score: " +
+  #       str(f1_score(numpy.array(test_classes),
+  #                    svm_classifier.predict(numpy.array(test_features)),
+  #                    pos_label='SCD')))
 
-  nb_classifier = MultinomialNB()
-  nb_classifier.fit(train_features, train_classes)
-  print("naive bayes accuracy: " +
-        str(f1_score(numpy.array(test_classes),
-                     nb_classifier.predict(numpy.array(test_features)),
-                     pos_label='SCD')))
+  # nb_classifier = MultinomialNB()
+  # nb_classifier.fit(train_features, train_classes)
+  # print("naive bayes accuracy: " +
+  #       str(f1_score(numpy.array(test_classes),
+  #                    nb_classifier.predict(numpy.array(test_features)),
+  #                    pos_label='SCD')))
 
-  perceptron_classifier = Perceptron()
-  perceptron_classifier.fit(train_features, train_classes)
-  print("SGD accuracy: " +
-        str(f1_score(numpy.array(test_classes),
-                     perceptron_classifier.predict(numpy.array(test_features)),
-                     pos_label='SCD')))
+  # perceptron_classifier = Perceptron()
+  # perceptron_classifier.fit(train_features, train_classes)
+  # print("SGD accuracy: " +
+  #       str(f1_score(numpy.array(test_classes),
+  #                    perceptron_classifier.predict(numpy.array(test_features)),
+  #                    pos_label='SCD')))
 
-  dt_classifier = DecisionTreeClassifier(max_depth=1)
-  dt_classifier.fit(train_features, train_classes)
-  print("tree accuracy: " +
-        str(f1_score(numpy.array(test_classes),
-                     dt_classifier.predict(numpy.array(test_features)),
-                     pos_label='SCD')))
+  # dt_classifier = DecisionTreeClassifier(max_depth=1)
+  # dt_classifier.fit(train_features, train_classes)
+  # print("tree accuracy: " +
+  #       str(f1_score(numpy.array(test_classes),
+  #                    dt_classifier.predict(numpy.array(test_features)),
+  #                    pos_label='SCD')))
 
   classifier = MyBoostClassifier(algorithm="SAMME")
   new_estimator_list = list()
@@ -187,9 +185,9 @@ def report():
       new_estimator_list.append(copy.deepcopy(estimator))
   classifier.set_estimators(new_estimator_list)
   classifier.fit(numpy.array(train_features), numpy.array(train_classes))
-  # print("logitboost accuracy: " +
-  #       str(classifier.score(numpy.array(test_features),
-  #                            numpy.array(test_classes))))
+  print("logitboost accuracy: " +
+        str(classifier.score(numpy.array(test_features),
+                             numpy.array(test_classes))))
   # print("logitboost precision: " +
   #       str(precision_score(numpy.array(test_classes),
   #                           classifier.predict(numpy.array(test_features)),
