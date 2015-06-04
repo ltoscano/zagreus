@@ -8,6 +8,10 @@ from random import shuffle
 from my_record import MyRecord, interval_base
 import pickle
 import matplotlib
+from sklearn.preprocessing import normalize
+
+records = list()
+axes_array = list()
 
 def parallel_coordinates(data_sets, style=None):
   dims = len(data_sets[0])
@@ -40,7 +44,7 @@ def parallel_coordinates(data_sets, style=None):
   # Plot the datasets on all the subplots
   for i, ax in enumerate(axes):
     for dsi, d in enumerate(data_sets):
-      ax.plot(x, d, style[dsi])
+      ax.plot(x, d, style[dsi], linewidth=0.5)
     ax.set_xlim([x[i], x[i + 1]])
 
   # Set the x axis ticks
@@ -67,11 +71,42 @@ def parallel_coordinates(data_sets, style=None):
 
   # Stack the subplots
   plt.subplots_adjust(wspace=0)
-
+  # plt.xlabel(str(axes_array))
   return plt
 
+def normalize_features(norm_features, scd_features):
+  feature_array = [list(norm_features.values()), list(scd_features.values())]
+  for record in records:
+    feature_array.append(list(record.features.values()))
+  return normalize(feature_array, norm='l2', axis=0, copy=False)
+
+def sort_features():
+  scd_features = dict()
+  norm_features = dict()
+  scd_count = 0
+  norm_count = 0
+
+  for key in records[0].features.keys():
+    scd_features[key] = 0
+    norm_features[key] = 0
+
+  for record in records:
+    if record.my_class == "SCD":
+      scd_count += 1
+      for key in record.features.keys():
+        scd_features[key] += record.features[key]
+    else:
+      norm_count += 1
+      for key in record.features.keys():
+        norm_features[key] += record.features[key]
+
+  for key in records[0].features.keys():
+    norm_features[key] /= norm_count
+    scd_features[key] /= scd_count
+
+  return (norm_features, scd_features)
+
 def load():
-  records = list()
   my_records = pickle.load(open("records.pickle", "rb"))
   my_records_band = pickle.load(open("band_records.pickle", "rb"))
 
@@ -80,9 +115,38 @@ def load():
   for record in my_records_band:
     records.append(record)
 
-  dataset = list()
+def sort_axes(sort_type, axes_array, norm_features, scd_features):
+  deltas_dict = dict()
+  for index, key in enumerate(axes_array):
+    if sort_type == "absolute":
+      deltas_dict[key] = -abs(norm_features[index] - scd_features[index])
+    else:
+      deltas_dict[key] = norm_features[index] - scd_features[index]
+
+  sorted_deltas = sorted(deltas_dict.items(), key=operator.itemgetter(1))
+
+  new_axes = list()
+  for (key, value) in sorted_deltas:
+    new_axes.append(key)
+  return new_axes
+
+def run(sort_type):
+  (norm_features, scd_features) = sort_features()
+  axes_array = list(norm_features.keys())
+  dataset = normalize_features(norm_features, scd_features)
+  (norm_features, scd_features) = dataset[:2]
+  dataset = dataset[2:]
+
+  axes_array = sort_axes(sort_type, axes_array, norm_features, scd_features)
+  axes_array.remove("p_nn_50")
+  print(axes_array)
+
+  feature_array = list()
   for record in records:
-    dataset.append(list(record.features.values()))
+    feature_list = list()
+    for key in axes_array:
+      feature_list.append(record.features[key])
+    feature_array.append(feature_list)
 
   colors = list()
   for record in records:
@@ -91,6 +155,4 @@ def load():
     else:
       colors.append("b")
 
-  parallel_coordinates(dataset, style=colors).show()
-
-load()
+  parallel_coordinates(feature_array, style=colors).show()

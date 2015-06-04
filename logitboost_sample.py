@@ -86,7 +86,7 @@ class LogitBoostClassifier(ClassifierMixin):
         self.algorithm = algorithm
 
     def _make_estimator(self, append=True):
-        """Make and configure a copy of the `base_estimator_` attribute.
+        """Make and configure a copy of the `base_estimator_` array.
 
         Warning: This method should be used to properly instantiate new
         sub-estimators.
